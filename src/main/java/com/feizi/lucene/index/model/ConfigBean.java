@@ -23,7 +23,7 @@ public class ConfigBean {
 	// 分词器
 	private Analyzer analyzer = new StandardAnalyzer(Version.LUCENE_43);
 	// 索引地址
-	private String indexPath = "/index/";
+	private String indexPath = "/Users/ljj/Downloads/LuceneIndex/";
 	private double indexReopenMaxStaleSec = 10;
 	private double indexReopenMinStaleSec = 0.025;
 
