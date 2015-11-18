@@ -8,6 +8,7 @@ import org.apache.lucene.analysis.core.StopAnalyzer;
 import org.apache.lucene.analysis.core.WhitespaceAnalyzer;
 import org.apache.lucene.analysis.standard.StandardAnalyzer;
 import org.apache.lucene.util.Version;
+import org.wltea.analyzer.lucene.IKAnalyzer;
 
 /**
  * 分词器工厂类，负责创建分词器
@@ -23,8 +24,8 @@ public class AnalyzerFactory {
 	public Analyzer createAnalyzer(AnalyzerType analyzerType, Version version) {
 		switch (analyzerType) {
 			case IK_ANALYZER:
-				//第三方分词器
-				analyzer = null;
+				//第三方中文分词器
+				analyzer = new IKAnalyzer(true);
 				break;
 			case WHITE_SPACE_ANALYZER:
 				//空格分词器，对字符串不做任何处理
