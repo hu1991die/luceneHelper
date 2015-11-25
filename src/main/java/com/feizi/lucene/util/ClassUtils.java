@@ -1,5 +1,7 @@
 package com.feizi.lucene.util;
 
+import com.feizi.lucene.dao.manager.DBPool;
+
 /**
  * 主要作用是返回class文件所在的文件目录或工程的根目录地址，这主要用于指定工程中
  * 配置文件的路径，不至于环境迁移而导致配置文件路径错误
@@ -14,6 +16,10 @@ public final class ClassUtils {
 	 */
 	private ClassUtils(){
 		
+	}
+	
+	public static String getResourcePath(){
+		return ClassUtils.class.getClassLoader().getResource("proxool.xml").getFile();
 	}
 	
 	/**
@@ -58,8 +64,7 @@ public final class ClassUtils {
 //		System.out.println(getClassPath(ClassUtils.class, true));
 		
 //		/Users/ljj/Documents/workspace/LuceneStudy/target/classes/
-		System.out.println(getClassRootPath(ClassUtils.class));
-		
-		
+//		System.out.println(getClassRootPath(ClassUtils.class));
+//		System.out.println(getClassPath(ClassUtils.class));
 	}
 }

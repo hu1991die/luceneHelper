@@ -3,7 +3,7 @@
 <proxool-config>  
 <proxool>   
     <alias>novelSelect</alias>   
-    <driver-url><![CDATA[jdbc:mysql://172.20.37.73:3306/novel?characterEncoding=utf-8]]></driver-url>   
+    <driver-url><![CDATA[jdbc:mysql://localhost:3306/zonghengnovel?characterEncoding=utf-8]]></driver-url>   
     <driver-class>com.mysql.jdbc.Driver</driver-class>  
      
     <driver-properties>   
@@ -22,7 +22,7 @@
 
 <proxool>   
     <alias>novelEdit</alias>   
-    <driver-url><![CDATA[jdbc:mysql://172.20.37.73:3306/novel?characterEncoding=utf-8]]></driver-url>   
+    <driver-url><![CDATA[jdbc:mysql://localhost:3306/zonghengnovel?characterEncoding=utf-8]]></driver-url>   
     <driver-class>com.mysql.jdbc.Driver</driver-class>   
     
     <driver-properties>   
