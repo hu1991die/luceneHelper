@@ -20,6 +20,7 @@
 	<dom4j.version>1.6.1</dom4j.version>
 	<log4j.version>1.2.17</log4j.version>
 	<javax.xml.version>2.2.12</javax.xml.version>
+	<mysql.version>5.1.21</mysql.version>
   </properties>
   
   <build>
@@ -146,6 +147,12 @@
 		<groupId>org.wltea</groupId>
 		<artifactId>IKAnalyzer</artifactId>
 		<version>2012FF_u1</version>
+	</dependency>
+	
+	<dependency>
+	  <groupId>mysql</groupId>
+	  <artifactId>mysql-connector-java</artifactId>
+	  <version>${mysql.version}</version>
 	</dependency>
   </dependencies>
 </project>

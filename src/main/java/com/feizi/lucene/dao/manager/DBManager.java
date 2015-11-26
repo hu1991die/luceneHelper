@@ -4,6 +4,7 @@ import java.sql.Connection;
 import java.sql.DriverManager;
 import java.sql.SQLException;
 
+import org.apache.log4j.Logger;
 import org.logicalcobwebs.proxool.ProxoolException;
 import org.logicalcobwebs.proxool.configuration.JAXPConfigurator;
 
@@ -14,13 +15,16 @@ import org.logicalcobwebs.proxool.configuration.JAXPConfigurator;
  * TODO
  */
 public final class DBManager {
+	
+	private Logger log = Logger.getLogger(DBManager.class);
 
 	private static DBManager dbManager = null;
 	
 	private DBManager(){
 		try {
-			JAXPConfigurator.configure(DBPool.getDBPool().getPoolPath(), false);
+			log.info("数据库连接池的配置文件路径：" + DBPool.getDBPool().getPoolPath());
 			Class.forName("org.logicalcobwebs.proxool.ProxoolDriver");
+			JAXPConfigurator.configure(DBPool.getDBPool().getPoolPath(), false);
 		} catch (ClassNotFoundException e) {
 			e.printStackTrace();
 		} catch (ProxoolException e) {
@@ -51,5 +55,13 @@ public final class DBManager {
 	 */
 	protected Connection getConnection(String dbPoolName) throws SQLException{
 		return DriverManager.getConnection(dbPoolName);
+	}
+	
+	public static void main(String[] args) {
+		try {
+			System.out.println(new DBManager().getConnection("proxool.noveldb"));
+		} catch (SQLException e) {
+			e.printStackTrace();
+		}
 	}
 }

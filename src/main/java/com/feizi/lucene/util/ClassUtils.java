@@ -18,10 +18,6 @@ public final class ClassUtils {
 		
 	}
 	
-	public static String getResourcePath(){
-		return ClassUtils.class.getClassLoader().getResource("proxool.xml").getFile();
-	}
-	
 	/**
 	 * 返回类class文件所在的目录
 	 * @param cls
@@ -64,7 +60,8 @@ public final class ClassUtils {
 //		System.out.println(getClassPath(ClassUtils.class, true));
 		
 //		/Users/ljj/Documents/workspace/LuceneStudy/target/classes/
-//		System.out.println(getClassRootPath(ClassUtils.class));
-//		System.out.println(getClassPath(ClassUtils.class));
+		System.out.println(getClassPath(DBPool.class));
+		System.out.println(getClassPath(DBPool.class, true));
+		System.out.println(getClassRootPath(DBPool.class));
 	}
 }
